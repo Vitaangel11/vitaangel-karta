@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Karta dne - Vitaangel</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; background: #fff; }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #d4af37;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 280px;
+      display: block;
+      margin: 20px auto 10px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    p { font-size: 18px; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <button onclick="showRandomCard()">🃏 Vytáhni si dnešní kartu</button>
+
+  <div id="cardContainer">
+    <img id="cardImage" src="" alt="Denní karta" style="display:none;">
+    <p id="cardText"></p>
+  </div>
+
+  <script>
+    const cards = [
+      { image: https://c9ffe1b885.clvaw-cdnwnd.com/79e4e3ceab946607f4cf1f9c31e2a81c/200000650-37c7237c73/700/Novy%CC%81%20impuls%20-%201%281%29.webp?ph=c9ffe1b885,}
+      { image: https://c9ffe1b885.clvaw-cdnwnd.com/79e4e3ceab946607f4cf1f9c31e2a81c/200000653-6e88f6e892/700/Novy%CC%81%20impuls%20-%201.webp?ph=c9ffe1b885,}
+      { image: https://c9ffe1b885.clvaw-cdnwnd.com/79e4e3ceab946607f4cf1f9c31e2a81c/200000661-3efed3efef/700/Novy%CC%81%20impuls%20-%202%281%29.webp?ph=c9ffe1b885,}
+
+    ];
+
+    function showRandomCard() {
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const imgEl = document.getElementById('cardImage');
+      const textEl = document.getElementById('cardText');
+
+      imgEl.src = randomCard.image;
+      textEl.innerText = randomCard.text;
+      imgEl.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
