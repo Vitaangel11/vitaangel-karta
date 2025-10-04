@@ -1,1 +1,0 @@
-# vitaangel-karta
